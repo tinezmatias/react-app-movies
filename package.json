@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "husky": "^7.0.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -24,21 +25,23 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "lint-staged": "^12.3.1",
     "prettier": "^2.5.1",
     "typescript": "^4.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test:coverage": "jest --coverage --colors --maxWorkers=2",
-    "test:coverage:watch": "jest --coverage --watch --colors --maxWorkers=2",
+    "test": "react-scripts test",
+    "test:coverage": "react-scripts test --watchAll=false --coverage --colors --maxWorkers=2",
+    "test:coverage:watch": "react-scripts test --coverage --colors --maxWorkers=2",
     "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "format:fix:staged": "prettier --write",
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
-    "lint:fix:staged": "eslint --fix"
+    "lint:fix:staged": "eslint --fix",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
