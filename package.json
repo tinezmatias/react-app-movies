@@ -3,15 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.25.0",
     "husky": "^7.0.4",
+    "lodash": "^4.17.21",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-query": "^3.34.12",
+    "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
-    "web-vitals": "^2.1.0"
+    "use-persisted-reducer": "^2.1.0",
+    "web-vitals": "^2.1.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
@@ -32,7 +37,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
     "test": "react-scripts test",
     "test:coverage": "react-scripts test --watchAll=false --coverage --colors --maxWorkers=2",
     "test:coverage:watch": "react-scripts test --coverage --colors --maxWorkers=2",
