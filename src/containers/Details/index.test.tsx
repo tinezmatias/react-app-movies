@@ -1,8 +1,10 @@
+// Vendor
 import { render, screen } from '@testing-library/react'
-import App from './App'
+// Component
+import Details from '.'
 
 test('renders learn react link', () => {
-  render(<App />)
-  const text = screen.getByText(/discover/i)
+  render(<Details />)
+  const text = screen.getByText(/details/i)
   expect(text).toBeInTheDocument()
 })
