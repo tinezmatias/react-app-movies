@@ -1,4 +1,4 @@
-# Getting Started with React App Movie
+# React App Movie
 
 ![Poster Img](https://github.com/tinezmatias/react-app-movies/blob/main/docs/img/poster.png?raw=true)
 
