@@ -1,0 +1,17 @@
+.ds-base-skeleton {
+  cursor: progress;
+  animation: skeleton-loading 1s linear infinite alternate;
+  opacity: 0.7;
+}
+
+.ds-movie-card-loader {
+  width: 185px;
+  height: 278px;
+  border-radius: 5%;
+}
+
+.ds-movie-details-loader {
+  width: 800px;
+  height: 350px;
+  border-radius: 10px;
+}
