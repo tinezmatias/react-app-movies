@@ -8,7 +8,6 @@ import {
   MovieDetailsLoader
 } from '../../components'
 import { TEXT_NOT_FOUND_MESSAGE } from '../../constants'
-import './styles.css'
 
 export default function Details() {
   const {

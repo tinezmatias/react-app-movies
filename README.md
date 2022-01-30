@@ -14,7 +14,7 @@ Visit the page: [Live demo](https://react-app-movies-one.vercel.app/)
 
 Prerequisites:
 
-1. have an api key from 'themoviedb', if you don't have it you can follow these steps.
+1. have an api key from 'themoviedb', if you don't have it you can follow these [steps](https://developers.themoviedb.org/3/getting-started/introduction).
 1. create an .env file, copy everything from .env.example, and complete with your api key.
 1. have node version 16.x, if you have nvm you can run nvm use to solve this.
 1. install dependencies, you can run yarn install.
