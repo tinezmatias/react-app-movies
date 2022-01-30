@@ -5,7 +5,8 @@ export enum ProviderTypes {
   // DATA
   UpdateData = 'DATA_PROVIDER_UPDATE_DATA',
   // UI
-  ToggleLoading = 'UI_PROVIDER_TOGGLE_LOADING'
+  UpdatePopularityFilter = 'UI_PROVIDER_UPDATE_POPULARITY_FILTER',
+  UpdateSearchFilter = 'UI_PROVIDER_UPDATE_SEARCH_FILTER'
 }
 
 // DATA PROVIDER
@@ -18,7 +19,8 @@ export type DataProviderActions =
 
 // UI PROVIDER
 export type UiPayload = {
-  [ProviderTypes.ToggleLoading]: UiProviderType
+  [ProviderTypes.UpdatePopularityFilter]: UiProviderType
+  [ProviderTypes.UpdateSearchFilter]: UiProviderType
 }
 
 export type UiProviderActions = ActionMap<UiPayload>[keyof ActionMap<UiPayload>]
@@ -52,11 +54,20 @@ export type AppProviderInitialState = {
 
 export type DataProviderType = {
   id?: number
-  name?: string
+  backdrop_path?: string
+  original_language?: string
+  original_title?: string
+  overview?: string
+  poster_path?: string
+  release_date?: string
+  title?: string
+  vote_average?: number
+  vote_count?: number
 }
 
 export type UiProviderType = {
-  isLoading?: boolean
+  popularityFilterValue?: number
+  searchFilterValue?: string
 }
 
 // REDUCERS

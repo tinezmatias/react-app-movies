@@ -1,12 +1,15 @@
 // Types
-import { ProviderTypes, TUiReducer } from '../types'
+import { ProviderTypes, TUiReducer } from '../../../types'
 
 export const appReducer: TUiReducer = (state, action) => {
   const stagedState = { ...state }
 
   switch (action.type) {
-    case ProviderTypes.ToggleLoading:
-      stagedState.isLoading = !state.isLoading
+    case ProviderTypes.UpdatePopularityFilter:
+      stagedState.popularityFilterValue = action.payload.popularityFilterValue
+      return stagedState
+    case ProviderTypes.UpdateSearchFilter:
+      stagedState.searchFilterValue = action.payload.searchFilterValue
       return stagedState
     default:
       return state

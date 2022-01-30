@@ -1,24 +1,23 @@
-todo list:
-1. agregar rutas
-2. agregar componentes
-    1. boton
-    2. search bar
-    3. card
-    4. image especial atencion al size de la imagen
-3. agregar paginas
-4. agregar testing
-5. agregar capa de servicio
-6. agregar tipo de datos
-7. agregar error / loading handlers
+# Getting Started with React App Movie
 
+![Poster Img](https://github.com/tinezmatias/react-app-movies/blob/main/docs/img/poster.png?raw=true)
 
+This project is the result of an interview challenge.
+you can read the details of the requested challenge [here](./docs/challenge.md).
 
+You will notice that I don't use any component libraries, for a particular reason, I think the idea of a challenge is to demonstrate as much knowledge as possible.
+The next known steps could be any of the [nice to have](./docs/nice-to-have.md), or create other versions of this same project using libraries like materialui or baseweb.
 
-# Getting Started with Create React App
+Visit the page: [Live demo](https://react-app-movies-one.vercel.app/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to develop
 
-## Available Scripts
+Prerequisites:
+
+1. have an api key from 'themoviedb', if you don't have it you can follow these steps.
+1. create an .env file, copy everything from .env.example, and complete with your api key.
+1. have node version 16.x, if you have nvm you can run nvm use to solve this.
+1. install dependencies, you can run yarn install.
 
 In the project directory, you can run:
 
@@ -33,7 +32,6 @@ You will also see any lint errors in the console.
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
@@ -42,5 +40,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.

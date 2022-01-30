@@ -3,17 +3,21 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 // Internal
 import Discover from './containers/Discover'
 import Details from './containers/Details'
-// Styles
-import './App.css'
+import { DataProvider } from './provider'
+import { AppProvider } from './context'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<Discover />} />
-        <Route path="/movie/:id" element={<Details />} />
-      </Routes>
-    </BrowserRouter>
+    <AppProvider>
+      <DataProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="*" element={<Discover />} />
+            <Route path="/movie/:movieid" element={<Details />} />
+          </Routes>
+        </BrowserRouter>
+      </DataProvider>
+    </AppProvider>
   )
 }
 

@@ -33,6 +33,7 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
+    'jsx-a11y/label-has-associated-control': rules.OFF,
     'react/jsx-props-no-spreading': rules.OFF,
     'prettier/prettier': rules.ERROR,
     'space-before-function-paren': rules.OFF,

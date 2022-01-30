@@ -1,14 +1,14 @@
 // Vendor
 import { createContext } from 'react'
 // Internal
-import { AppProviderInitialState, IStateAppContext } from './types'
+import { AppProviderInitialState, IStateAppContext } from '../../types'
 
 export const initialState: AppProviderInitialState = {
   ui: {
-    isLoading: false
+    popularityFilterValue: 0,
+    searchFilterValue: ''
   },
   data: {
-    name: undefined,
     id: undefined
   }
 }
