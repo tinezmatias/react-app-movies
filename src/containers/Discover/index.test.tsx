@@ -1,5 +1,9 @@
 // Vendor
-import { render, waitForElementToBeRemoved } from '@testing-library/react'
+import {
+  render,
+  waitFor,
+  waitForElementToBeRemoved
+} from '@testing-library/react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import userEvent from '@testing-library/user-event'
 // Component
@@ -71,6 +75,12 @@ describe('Discover', () => {
     const screen = setup()
 
     await waitForElementToBeRemoved(() => screen.getAllByTestId('skeleton'))
+
+    const input = screen.getByRole('textbox')
+
+    userEvent.clear(input)
+
+    await waitFor(() => screen.getAllByRole('button'))
 
     const buttons = screen.getAllByRole('button')
 

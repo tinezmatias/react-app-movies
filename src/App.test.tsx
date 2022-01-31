@@ -1,9 +1,11 @@
+// Vendor
 import {
   render,
   waitFor,
   waitForElementToBeRemoved
 } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+// Internals
 import App from './App'
 
 const setup = () => render(<App />)
@@ -18,13 +20,9 @@ describe('App', () => {
 
     userEvent.click(buttons[10])
 
-    await waitFor(() =>
-      expect(screen.getByTestId('skeleton')).toBeInTheDocument()
-    )
+    await waitForElementToBeRemoved(() => screen.getByTestId('skeleton'))
 
-    await waitFor(() =>
-      expect(screen.getByTestId('details-card')).toBeInTheDocument()
-    )
+    await waitFor(() => screen.getByTestId('details-card'), { timeout: 15000 })
 
     await waitFor(() =>
       expect(screen.getByTestId('poster')).toBeInTheDocument()

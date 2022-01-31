@@ -33,6 +33,14 @@ module.exports = {
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
+    'import/no-extraneous-dependencies': [
+      rules.ERROR,
+      {
+        devDependencies: true,
+        optionalDependencies: false,
+        peerDependencies: false
+      }
+    ],
     'jsx-a11y/label-has-associated-control': rules.OFF,
     'react/jsx-props-no-spreading': rules.OFF,
     'prettier/prettier': rules.ERROR,
