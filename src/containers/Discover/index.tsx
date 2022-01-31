@@ -1,5 +1,11 @@
 // Internal
-import { Message, ErrorMessage, Header, MoviesList } from '../../components'
+import {
+  Message,
+  ErrorMessage,
+  Header,
+  MoviesList,
+  Footer
+} from '../../components'
 import { useDiscover } from '../../hooks'
 import './styles.css'
 
@@ -8,13 +14,16 @@ export default function Discover() {
     useDiscover()
 
   return (
-    <div className="ds-discover-container">
-      <Header {...headerProps} />
-      <div className="ds-discover-content-container ">
-        {showError && <ErrorMessage />}
-        {showEmpty && <Message {...emptyProps} />}
-        {showList && <MoviesList {...listProps} />}
+    <>
+      <div className="ds-discover-container">
+        <Header {...headerProps} />
+        <div className="ds-discover-content-container ">
+          {showError && <ErrorMessage />}
+          {showEmpty && <Message {...emptyProps} />}
+          {showList && <MoviesList {...listProps} />}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }
