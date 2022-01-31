@@ -3,7 +3,8 @@ import './styles.css'
 
 const skeletons = {
   MovieDetails: 'ds-movie-details-loader',
-  Moviecard: 'ds-movie-card-loader'
+  Moviecard: 'ds-movie-card-loader',
+  Page: 'ds-page-loader'
 }
 
 interface IProps {
@@ -21,4 +22,8 @@ export function MovieDetailsLoader() {
 
 export function MovieCardLoader() {
   return <Skeleton type={skeletons.Moviecard} />
+}
+
+export function PageLoader() {
+  return <Skeleton type={skeletons.Page} />
 }
