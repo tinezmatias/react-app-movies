@@ -14,7 +14,7 @@ export function DetailsCard({ movie }: IProps) {
   const styles = { ...(movie.backdrop_path && bgImage) }
 
   return (
-    <div className="ds-container-card">
+    <div className="ds-container-card" data-testid="details-card">
       <div className="ds-movie-info">
         <div className="ds-movie-header">
           <div className="ds-movie-header-left">
@@ -22,6 +22,7 @@ export function DetailsCard({ movie }: IProps) {
               className="ds-movie-header-poster"
               src={posterImage}
               alt="poster"
+              data-testid="poster"
             />
             <span className="ds-movie-header-average">
               {movie.vote_average} / 10

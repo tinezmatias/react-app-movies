@@ -21,7 +21,7 @@ export function Star({ current, id, onClick }: IProps) {
         name="rating"
         className="ds-rating-input"
         id={`rating-${id}`}
-        data-id={`rating-${id}`}
+        data-testid={`rating-${id}`}
         checked={checked}
         value={id}
         onChange={onChange}

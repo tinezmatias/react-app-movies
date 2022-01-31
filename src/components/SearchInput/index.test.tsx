@@ -1,12 +1,46 @@
 // Vendor
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 // Internal
 import { SearchInput } from './index'
-import { TEXT_SEARCH_PLACE_HOLDER } from '../../constants'
 
-test('renders learn react link', () => {
-  const onChange = jest.fn(() => {})
-  render(<SearchInput onChange={onChange} value="" />)
-  const text = screen.getByText(TEXT_SEARCH_PLACE_HOLDER)
-  expect(text).toBeInTheDocument()
+const setup = (value = '') => {
+  const onChange = jest.fn()
+
+  const screen = render(<SearchInput onChange={onChange} value={value} />)
+
+  return {
+    screen,
+    onChange
+  }
+}
+
+describe('Search input', () => {
+  it('Should render', () => {
+    const { screen } = setup()
+
+    const input = screen.getByRole('textbox')
+
+    expect(input).toBeInTheDocument()
+  })
+  it('Should render with initial value', () => {
+    const text = 'initial'
+    const { screen } = setup('initial')
+
+    const input = screen.getByRole('textbox')
+
+    expect(input).toBeInTheDocument()
+    expect(input).toHaveValue(text)
+  })
+
+  it('Should type', () => {
+    const { screen, onChange } = setup()
+
+    const input = screen.getByRole('textbox')
+
+    userEvent.type(input, 'terminator')
+
+    expect(input).toBeInTheDocument()
+    expect(onChange).toHaveBeenCalled()
+  })
 })

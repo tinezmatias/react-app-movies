@@ -3,14 +3,18 @@ import { render } from '@testing-library/react'
 // Internal
 import { MovieCardLoader, MovieDetailsLoader } from './index'
 
-test('renders learn react link', () => {
-  const component = render(<MovieCardLoader />)
+test('MovieCardLoader should render', () => {
+  const screen = render(<MovieCardLoader />)
 
-  expect(component).toBeInTheDocument()
+  const loader = screen.getByTestId('skeleton')
+
+  expect(loader).toBeInTheDocument()
 })
 
-test('renders learn react link', () => {
-  const component = render(<MovieDetailsLoader />)
+test('MovieDetailsLoader should render', () => {
+  const screen = render(<MovieDetailsLoader />)
 
-  expect(component).toBeInTheDocument()
+  const loader = screen.getByTestId('skeleton')
+
+  expect(loader).toBeInTheDocument()
 })

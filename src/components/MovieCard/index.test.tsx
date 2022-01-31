@@ -1,15 +1,31 @@
 // Vendor
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 // Internal
 import { MovieCard } from './index'
-import { TEXT_SEARCH_PLACE_HOLDER } from '../../constants'
+// Mocks
+import { MOVIE } from './__mocks__/data'
 
-test('renders learn react link', () => {
-  const onChange = jest.fn(() => {})
-  // TODO: MOCK MOVIE
-  const movie: any = {}
+const setup = (movie = MOVIE) => {
+  const onClick = jest.fn(() => {})
+  const screen = render(<MovieCard onClick={onClick} movie={movie} />)
+  return { screen, onClick }
+}
 
-  render(<MovieCard onClick={onChange} movie={movie} />)
-  const text = screen.getByText(TEXT_SEARCH_PLACE_HOLDER)
-  expect(text).toBeInTheDocument()
+describe('Movie Card', () => {
+  it('Should render', () => {
+    const { screen } = setup()
+    const button = screen.getByRole('button')
+    expect(button).toBeInTheDocument()
+  })
+
+  it('Should click', () => {
+    const { screen, onClick } = setup()
+    const button = screen.getByRole('button')
+
+    userEvent.click(button)
+
+    expect(onClick).toBeCalled()
+    expect(onClick).toBeCalledWith(MOVIE)
+  })
 })

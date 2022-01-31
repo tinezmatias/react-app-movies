@@ -1,16 +1,30 @@
 // Vendor
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
 // Internal
 import { DetailsContainer } from './index'
 
-test('renders learn react link', () => {
+const mockedUsedNavigate = jest.fn()
+
+jest.mock('react-router-dom', () => ({
+  ...(jest.requireActual('react-router-dom') as any),
+  useNavigate: () => mockedUsedNavigate
+}))
+
+const setup = () =>
   render(
     <DetailsContainer image="" darkBg>
       <h1>Test</h1>
-    </DetailsContainer>
+    </DetailsContainer>,
+    { wrapper: MemoryRouter }
   )
 
-  const text = screen.getByText(/test/i)
+describe('Details Container', () => {
+  it('Should render', () => {
+    const screen = setup()
 
-  expect(text).toBeInTheDocument()
+    const text = screen.getByText(/test/i)
+
+    expect(text).toBeInTheDocument()
+  })
 })

@@ -12,7 +12,7 @@ interface IProps {
 
 function Skeleton({ type }: IProps) {
   const className = `ds-base-skeleton ${type}`
-  return <div className={className} />
+  return <div className={className} data-testid="skeleton" />
 }
 
 export function MovieDetailsLoader() {
